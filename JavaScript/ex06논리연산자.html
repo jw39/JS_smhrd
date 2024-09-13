@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 삼항 연산자
+        // 조건식 ? (t) 실행문장 1 : (f) 실행문자 2
+
+        // 실습 1. 짝수 홀수 구분
+        // let input = parseInt(prompt("숫자 입력 : "))
+        // console.log( input%2 === 0 ? 
+        // input + "은(는) 짝수입니다." : input +  "은(는) 홀수입니다");
+
+        // 실습 2. 오렌지 박스
+        let input = parseInt(prompt("한 박스에 담을 오렌지 수를 입력해주세요!"));
+        let orange = parseInt(prompt("현재 오렌지의 개수를 입력해주세요!"));
+
+        console.log("한 박스에 담을 오렌지 수 : ", input);
+        console.log("현재 오렌지 개수 : ", orange);
+        let box = parseInt(orange/input)
+        let result = orange % input === 0 ? box : box + 1;
+
+        // 선생님 답안
+        // let result = orange%box === 0? orange/box : parseInt(orange/box) + 1;
+        console.log("필요한 박스의 수 : " + result);
+    </script>
+</body>
+</html>

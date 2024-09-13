@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // if문
+        // if(조건식){
+        //     // 조건식-> 참
+        //     console.log('실행문장 1 실행');
+        // } else {
+        //     console.log('실행문장 2 실행');
+        // }
+
+        // Q1. 2와 6의 배수를 구하는 문제
+        // 조건식 안에 and 연산자 -> 조건 2개가 모두 true일 때
+        // if~else문 -> if문 조건식 설정
+
+        // let num = parseInt(prompt('숫자 입력 >>')) 
+
+        // if (num%2===0 && num%6===0){
+        //     console.log(`${num}은(는) 2와 6의 배수입니다`);
+        //     // 템플릿리터럴 `&{}`
+        // } else {
+        //     console.log(num+'은(는) 2와 6의 배수가 아닙니다.');
+        // }
+
+        // 다중 if문
+        // Q2. 두 수 비교
+        // let num1 = parseInt(prompt("첫 번째 숫자를 입력하세요!"))
+        // let num2 = parseInt(prompt("두 번째 숫자를 입력하세요!"))
+
+        // if (num1 > num2){
+        //     console.log("첫 번째 입력한 값이 더 큰 수 입니다.");
+        // } else if (num1 < num2){
+        //     console.log('두 번째 입력한 값이 더 큰 수 입니다.');
+        // } else {
+        //     console.log("두 수는 같습니다");
+        // }
+        
+        //switch문
+        let num = 3;
+        console.log(num);
+
+        switch (num%2) {
+            case 0:
+                console.log('짝수');
+                break;
+            case 1:
+                console.log("홀수");
+                break;
+            default:
+                console.log("재입력");
+                break;
+        }
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

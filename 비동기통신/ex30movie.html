@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <!--jQuery 연결한 거임-->
+</head>
+<body>
+    <div id="result-area">
+        <table border="1">
+            <tr>
+                <th>순위</th>
+                <th>영화명</th>
+                <th>개봉일</th>
+            </tr>
+        </table>
+    </div>
+
+    <button id="req-button">데이터 요청</button>
+
+    <script>
+        //데이터 요청 클릭 시 , 동작하는 이벤트 적용해보기
+        $("#req-button").click(()=>{
+            // 1. 변수 선언 후 url값 통해 데이터 받아오기
+            let movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20240526"
+
+            // 2. ajax() : 비동기 통신을 지원하는 함수
+            $.ajax({
+                url : movieURL, //변수 명을 담은 것임
+                success : (result)=>{  //url을 통해 요청하고 응답받은 데이터를 result라는 이름으로 매개변수로 받는다
+                    console.log(result); // url 접근?
+                    console.log(result.boxOfficeResult); //maybe key값??
+                    console.log(result.boxOfficeResult.dailyBoxOfficeList); //key값의 리스트에 접근해 10개의 데이터 가져오기
+
+                    let movieList = result.boxOfficeResult.dailyBoxOfficeList; //변수에 담기
+
+                    // 박스오피스 순위, 영화이름, 개봉일을 콘솔창에 반복문으로 출력해보기
+                    for(let i=0; i<movieList.length; i++){
+                        console.log(`${movieList[i].rank}.${movieList[i].movieNm}(${movieList[i].openDt})`);
+                        // movieList의 rank, movieList의 이름, movieList의 개봉일을 출력함,, .과 ()는 걍 출력문에 해당
+
+                        // table 형태로 웹페이지에 출력해보기, ``으로 태그와 ${} 다 담기
+                        let resultHTML = `<tr>
+                                            <td>${movieList[i].rank}</td>
+                                            <td>${movieList[i].movieNm}</td>
+                                            <td>${movieList[i].openDt}</td>
+                                          </tr>`
+                        $("table").append(resultHTML); //append 메소드 사용해서 테이블에 접근 후 순위, 영화명, 개봉일 밑에 테이블 그대로 추가
+                    }
+                }, //컴마 찍기!! ajax ({ success : ()=>{} , error : ()=>{} })
+                error : ()=>{
+                    // 데이터 응답 실패 시 '요청 실패'창 띄우기
+                    alert('요청 실패')
+                }
+            })
+        })
+
+    </script>
+    
+</body>
+</html>

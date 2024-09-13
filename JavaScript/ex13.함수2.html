@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 표현식
+        const func = function(){
+            console.log("함수 표현식");
+        }
+        func();
+
+        // 화살표 함수
+        const func2 = () => {
+            console.log("화살표 함수");
+        }
+        func2();
+
+        // 화살표 함수 예제
+        const greet = (name) =>{
+            console.log(`안녕하세요 저는 ${name} 입니다`);
+        }
+        greet("최지원");
+
+        const greet2 = name => `안녕하세요. 저는 ${name} 이다요.`
+        console.log(greet2("최지원"));
+
+        
+
+    </script>
+</body>
+</html>

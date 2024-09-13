@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>0</p>
+    <button class="pulsNum">+1</button>
+    <button class="miusNum">-1</button>
+    <button class="resetNum">reset</button>
+
+
+    <script>
+        let num = 0;
+
+        $(".pulsNum").click(()=>{
+            num++
+            $("p").text(num);
+            // p태그에 접근을 해서 안에 있는 내용을 바꾸려고 한다.
+            // JS -> .innerText / JQ -> .Text()
+        })
+
+        $(".miusNum").click(()=>{
+            // 음수로 변환이 되면 안됨
+            if (num>0){
+                num--;
+                $("p").text(num);
+            }
+        })
+
+        $(".resetNum").click(()=>{
+            $("p").text(num=0)
+
+        })
+
+
+    </script>
+    
+</body>
+</html>

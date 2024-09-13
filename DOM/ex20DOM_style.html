@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="spanTag">아래 버튼을 클릭하면 변화가 일어납니다! 신기하죠?</span>
+    <br>
+    <button onclick="clickFunc()">클릭</button>
+
+    <script>
+        // 아이디를 통해 가져오겠다!
+        // getElementById : id로 요소 검색
+        let spanTag = document.getElementById("spanTag");
+        console.log("get", spanTag);
+
+        // querySelector : css 선택자로 요소 검색
+        // querySelectorAll: css 선택자로 모든 요소 검색
+        // 쿼리를 통해 가져오겠다! 
+        spanTag = document.querySelector("span")
+        console.log("query", spanTag);
+
+        const clickFunc = () => {
+            spanTag.style.color = "pink";
+            spanTag.style.fontSize = "25px";
+            spanTag.style.fontWeight = "900";
+
+
+        }
+
+    </script>
+</body>
+</html>

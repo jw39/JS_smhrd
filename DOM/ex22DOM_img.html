@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="" -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk1HpRcVoo1rS1bP65z8Ip2hL_Qs3c_gbZFA&s" 
+    width="400px" id="imgId" class="imgClass">
+<br>
+<button onclick="imgChange()"> 이미지 변경</button>
+
+<script>
+    // <img> 태그의 src 속성은 이미지 소스를 명시
+    let src1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk1HpRcVoo1rS1bP65z8Ip2hL_Qs3c_gbZFA&s"
+    let src2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOK67NQWyz5BWqdQA3h9mCYWw2THwf8KNTJQ&s"
+    let src3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW7wLjWTNcbiEkZp_ky5w8RV7ZV1x_7YPWHA&s"
+    const imgChange = () => {
+       let img = document.getElementById("imgId");
+
+       // src 속성을 비교해서
+       if(img.src === src1){
+        img.src = src2
+       } else if(img.src === src2) {
+        img.src = src3;
+       } else{
+        img.src = src1;
+       }
+
+    }
+
+
+</script>
+
+</body>
+</html>

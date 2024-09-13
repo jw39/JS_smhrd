@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>jQuery 활용해보기</h1>
+    <h2>jQuery Style</h2>
+    <button id="h1">h1 change</button>
+    <button id="h2">h2 chanhe</button>
+
+    <script>
+        $("#h1").click(()=>{
+            $("h1").css("color", "blue");
+            $("h1").css("background-color", "Aquamarine");
+
+        })
+
+        // "color" : "값"
+        $("#h2").click(()=>{
+            $("h2").css({
+                "color":"pink",
+                "background-color":"orange"
+            });
+        })
+
+    </script>
+
+
+
+
+</body>
+
+</html>
